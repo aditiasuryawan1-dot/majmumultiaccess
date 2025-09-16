@@ -5,13 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Majmu Multiaccess</title>
     <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0;
-      background: url("assets/langit.png") no-repeat center/cover;
-      color: antiquewhite;
-      text-align: center;
-    }
+    html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: antiquewhite;
+  text-align: center;
+  background: url("assets/langit.png") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed; /* bisa dihapus kalau nggak mau efek parallax */
+}
 
     header {
       text-align: center;
@@ -311,3 +318,4 @@
   </section>
 </body>
 </html
+
