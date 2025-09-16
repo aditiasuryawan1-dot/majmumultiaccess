@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majmu Multiaccess</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: url("assets/langit.png") no-repeat center/cover;
+      color: antiquewhite;
+      text-align: center;
+    }
+
+    header {
+      text-align: center;
+      color: white;
+      padding: 15px 10px;
+      background: url("assets/bgHeader.png") no-repeat center/cover;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    /* === NAVBAR === */
+    nav {
+      background: #333;
+    }
+    nav ul {
+      margin: 0; padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav ul li {
+      position: relative;
+    }
+    nav ul li a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    nav ul li:hover {
+      background: #444;
+    }
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background: #444;
+      top: 100%;
+      left: 0;
+      min-width: 160px;
+      z-index: 999;
+    }
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    section {
+      padding: 15px;
+    }
+    .hidden { display: none; }
+
+    .calculator input, .calculator button {
+      padding: 8px;
+      margin: 5px;
+      font-size: 14px;
+    }
+
+    /* === SLIDER PRODUK === */
+    .slider {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(1,9,43,0.6);
+      background: #010f2e;
+    }
+    .slides {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+      background: rgb(1, 9, 43);
+      padding: 15px;
+    }
+    .slide img {
+      width: 90%;
+      max-height: 180px;
+      object-fit: contain;
+      background: #0a0335;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    .slide h3 {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .slide p {
+      font-size: 13px;
+      color: #02c298;
+    }
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.7);
+      color: #010f2e;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 18px;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.2em; }
+      nav ul li a { font-size: 12px; padding: 8px 10px; }
+      .slide img { max-height: 140px; }
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(sec => sec.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    function hitungGadai() {
+      let nilai = parseFloat(document.getElementById("nilaiGadai").value);
+      if (!isNaN(nilai)) {
+        let hasil = nilai * 0.0033; // 0.33%
+        document.getElementById("hasilGadai").innerText = 
+          "Hasil: Rp " + hasil.toLocaleString("id-ID") + "/hr";
+      } else {
+        document.getElementById("hasilGadai").innerText = "Masukkan angka yang valid.";
+      }
+    }
+  </script>
+</head>
+<body style="color: antiquewhite; text-align: center;">
+  <header>
+    <h1>Majmu Multiaccess</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="home.html" onclick="showSection('home')">Home</a></li>
+      <li><a href="profil.html" onclick="showSection('profil')">Profil</a></li>
+      <li><a href="#" onclick="showSection('gadai')">Gadai</a></li>
+      <li>
+        <a href="#">Produk</a>
+        <ul>
+          <li><a href="print.html" onclick="showSection('percetakan')">Percetakan</a></li>
+          <li><a href="konveksi.html" onclick="showSection('konveksi')">Konveksi</a></li>
+          <li><a href="https://grosirbaleendah.netlify.app/" onclick="showSection('sembako')">Grosir Sembako</a></li>
+          <li><a href="pulsa.html" onclick="showSection('pulsa')">Agen Pulsa</a></li>
+          <li><a href="web.html" onclick="showSection('web')">Software Development & Web</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="https://www.kompas.com/">Berita</a>
+        <ul>
+          <li><a href="https://gelihati.blogspot.com/" onclick="showSection('hiburan')">Hiburan</a></li>
+          <li><a href="https://www.gsmarena.com/" onclick="showSection('gadget')">Gadget</a></li>
+          <li><a href="https://shamela.ws/" onclick="showSection('agama')">Agama</a></li>
+        </ul>
+      </li>
+      <li><a href="https://www.crazygames.co.id/" onclick="showSection('game')">Game</a></li>
+    </ul>
+  </nav>
+
+   <section id="home">
+    <h2 style="text-align:center;">SELAMAT DATANG DI MAJMU MULTIACCESS</h2>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="assets/gadai.jpeg" alt="Gadai">
+          <h3>GADAI SYARI'AH</h3>
+          <p>HP - TV - LAPTOP - MOTOR - EMAS</p>
+        </div>
+        <div class="slide">
+          <img src="assets/digitalprint.png" alt="Digital Print">
+          <h3>DIGITAL PRINTING</h3>
+          <p>BALIHO - POSTER - STICKER</p>
+        </div>
+        <div class="slide">
+          <img src="assets/KONVEKSI.png" alt="Konveksi">
+          <h3>KONVEKSI</h3>
+          <p>JAHIT & SABLON</p>
+        </div>
+        <div class="slide">
+          <img src="assets/grosir.png" alt="Grosir">
+          <h3>GROSIR SEMBAKO</h3>
+          <p>MINYAK GORENG - GULA - DLL</p>
+        </div>
+        <div class="slide">
+          <img src="assets/web.png" alt="Grosir">
+          <h3>DEVELOPMENT SOFTWARE & WEB</h3>
+          <p>MEMBUAT APLIKASI - QA PROGRAM - IT CONSULTANT</p>
+        </div>
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  </section>
+
+  <script>
+    const slides = document.querySelector('.slides');
+    const slideCount = document.querySelectorAll('.slide').length;
+    let index = 0;
+
+    function showSlide(n) {
+      index = (n + slideCount) % slideCount;
+      slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      showSlide(index - 1);
+    });
+    document.querySelector('.next').addEventListener('click', () => {
+      showSlide(index + 1);
+    });
+
+    // auto slide setiap 4 detik
+    setInterval(() => {
+      showSlide(index + 1);
+    }, 4000);
+  </script>
+
+
+  <!-- Content -->
+  <!--<section id="home">
+    <h2>Home</h2>
+    <p>Selamat datang di web Majmu Multiaccess. (Isi dummy)</p>
+  </section>
+
+  <section id="profil" class="hidden">
+    <h2>Profil</h2>
+    <p>Profil perusahaan Majmu Multiaccess. (Isi dummy)</p>
+  </section>-->
+
+  <section id="gadai" class="hidden">
+    <h2>Kalkulator Gadai</h2>
+    <p>Masukkan nilai pinjaman kemudian klik hitung</p>
+    <div class="calculator">
+      <input type="number" id="nilaiGadai" placeholder="Masukkan nilai (Rp)">
+      <button onclick="hitungGadai()">Hitung</button>
+      <div id="hasilGadai" class="result"></div>
+    </div>
+    <p>Hasil adalah nilai jasa per hari</p>
+  </section>
+
+  <section id="percetakan" class="hidden">
+    <h2>Produk Percetakan</h2>
+    <p>Isi dummy produk percetakan.</p>
+  </section>
+
+  <section id="konveksi" class="hidden">
+    <h2>Produk Konveksi</h2>
+    <p>Isi dummy produk konveksi.</p>
+  </section>
+
+  <section id="sembako" class="hidden">
+    <h2>Grosir Sembako</h2>
+    <p>Isi dummy grosir sembako.</p>
+  </section>
+
+  <section id="pulsa" class="hidden">
+    <h2>Agen Pulsa</h2>
+    <p>Isi dummy agen pulsa.</p>
+  </section>
+
+  <section id="ppob" class="hidden">
+    <h2>Agen PPOB</h2>
+    <p>Isi dummy agen PPOB.</p>
+  </section>
+
+  <section id="hiburan" class="hidden">
+    <h2>Berita Hiburan</h2>
+    <p>Isi dummy berita hiburan.</p>
+  </section>
+
+  <section id="teknologi" class="hidden">
+    <h2>Berita Teknologi</h2>
+    <p>Isi dummy berita teknologi.</p>
+  </section>
+
+  <section id="agama" class="hidden">
+    <h2>Berita Agama</h2>
+    <p>Isi dummy berita agama.</p>
+  </section>
+
+  <section id="game" class="hidden">
+    <h2>Game</h2>
+    <p>Isi Game.</p>
+  </section>
+</body>
+</html>
+

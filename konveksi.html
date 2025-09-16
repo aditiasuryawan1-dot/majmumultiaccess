@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majmu Multiaccess</title>
+  <style>
+    /* Reset dasar */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: url("assets/bghk.png") center/cover no-repeat;
+      color: #faf9f9;
+      padding: 3px;
+      text-align: center;
+    }
+
+    /* Navigasi */
+    nav {
+      margin-top: 10px;
+      background: #f57710;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #0e2727;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      background: url("assets/KONVEKSI.png") center/cover no-repeat;
+      color: #18ff18;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #ffc107;
+      color: #000;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #e0a800;
+    }
+
+    /* Section umum */
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    section h2 {
+      margin-bottom: 30px;
+      color: #198754;
+    }
+
+    /* Grid produk & galeri */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .card img {
+      max-width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    /* Galeri */
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    
+  <!-- Header -->
+  <header>
+    <h1>Konveksi</h1>
+    <nav>
+      <a href="#produk">Produk</a>
+      <!--<a href="#tentang">Tentang Kami</a>-->
+      <a href="#galeri">Galeri</a>
+      <a href="index.html">Kembali</a>
+    </nav>
+  </header>
+  
+  <!-- Hero -->
+  <div class="hero">
+    <p><h3 style="color: #e8f5d7;">
+      Kami adalah konveksi terpercaya yang melayani pembuatan kaos, seragam, jaket, 
+      dan lainnya dengan kualitas terbaik serta harga yang bersahabat.</h3>
+    </p>
+    <h1>Konveksi Berkualitas</h1>
+    <p>Pesanan cepat, harga bersahabat</p>
+    <a href="https://wa.me/6285222044600" class="btn">Chat Me</a>
+  </div>
+
+  <!-- Produk -->
+  <section id="produk">
+    <h2>Produk Unggulan</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="assets/kaos.png" alt="Kaos Sablon">
+        <h3>Sablon</h3>
+        <p>Desain custom sesuai permintaan</p>
+      </div>
+      <div class="card">
+        <img src="assets/kemeja.png" alt="Kemeja Kerja">
+        <h3>Kemeja Kerja</h3>
+        <p>Bahan nyaman dan profesional</p>
+      </div>
+      <div class="card">
+        <img src="assets/KEMEJA SEKOLAH.png" alt="Kemeja Sekolah">
+        <h3>Kemeja Sekolah</h3>
+        <p>Tahan lama & stylish</p>
+      </div>
+      <div class="card">
+        <img src="assets/jas.png" alt="Jas Almamater">
+        <h3>Jas Almamater</h3>
+        <p>Berkualitas tinggi</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami 
+  <section id="tentang" style="background:#f9f9f9;">
+    <h2>Tentang Kami</h2> 
+    
+  </section>-->
+
+  <!-- Galeri -->
+  <section id="galeri">
+    <h2>Galeri</h2>
+    <div class="grid gallery">
+      <img src="assets/kaos1.png" alt="Produk Kaos Sablon">
+      <img src="assets/kemeja1.png" alt="Produk Kemeja Kerja">
+      <img src="assets/setelan.png" alt="Produk Setelan Seragam">
+    </div>
+  </section>
+
+  <!-- Kontak 
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>Alamat: Komp. Griya Prima Asri, Jl. Cendana E28 no.1A Bandung</p>
+    <p>WA: <a href="https://wa.me/6285222044600">+62 852-2204-4600</a></p>
+    <p>Email: info@konveksiakhi.com</p>
+  </section> -->
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Konveksi Majmu Multiaccess. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

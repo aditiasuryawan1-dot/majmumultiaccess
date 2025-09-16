@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Ecommerce Pulsa Sederhana</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background: #f4f4f4;
+    }
+    input[type="text"] {
+      width: 120px;
+      padding: 5px;
+    }
+    button {
+      padding: 6px 10px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <h2>Daftar Harga Pulsa</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Kode</th>
+        <th>Produk</th>
+        <th>Nominal</th>
+        <th>Harga</th>
+        <th>No Tujuan</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SN1</td>
+        <td>SIMPATI & AS</td>
+        <td>1.000</td>
+        <td>1.825</td>
+        <td><input type="text" id="tujuan_SN1" placeholder="08xxxxxxxxxxx"></td>
+        <td><button onclick="beliProduk('SN1','tujuan_SN1')">Beli</button></td>
+      </tr>
+      <tr>
+        <td>SN2</td>
+        <td>SIMPATI & AS</td>
+        <td>2.000</td>
+        <td>2.975</td>
+        <td><input type="text" id="tujuan_SN2" placeholder="08xxxxxxxxxxx"></td>
+        <td><button onclick="beliProduk('SN2','tujuan_SN2')">Beli</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function beliProduk(kode,inputId) {
+      let noTujuan = document.getElementById(inputId).value;
+      if (!noTujuan) {
+        alert("Masukkan nomor tujuan terlebih dahulu!");
+        return;
+      }
+
+      // Nomor WA admin
+      let wa = "628997944479"; // ganti sesuai kebutuhan
+
+      // Pesan otomatis
+      let pesan = `${kode}.${noTujuan}.1234`;
+
+      // Buka WhatsApp langsung dengan text terisi
+      let url = "https://wa.me/" + wa + "?text=" + encodeURIComponent(pesan);
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
