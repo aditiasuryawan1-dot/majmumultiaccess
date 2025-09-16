@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>majmumultiaccess</title>
+  <title>Majmu Multiaccess</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,47 +15,63 @@
       background: #2d89ef;
       color: white;
       text-align: center;
-      padding: 1px;
+      padding: 8px;
     }
     nav {
       display: flex;
-      flex-wrap: wrap;
+      overflow-x: auto; /* biar bisa geser kanan kiri */
+      white-space: nowrap;
       background: #1b5fad;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
     nav a {
-      flex: 1;
-      padding: 10px;
+      flex: 0 0 auto; /* jangan dipaksa sama rata */
+      padding: 10px 15px;
       text-align: center;
       text-decoration: none;
       background: #1b5fad;
       color: white;
       font-weight: bold;
       border-right: 1px solid #145090;
+      font-size: 14px;
     }
     nav a:hover {
       background: #7afc01;
+      color: #000;
     }
     section {
-      padding: 0;
-      
+      padding: 10px;
+    }
+    .table-container {
+      width: 100%;
+      overflow-x: auto; /* kalau layar kecil, tabel bisa di-scroll */
     }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
       background: white;
+      font-size: 14px;
     }
     th, td {
       border: 1px solid #ddd;
-      padding: 8px;
+      padding: 6px;
       text-align: left;
+      white-space: nowrap; /* biar kolom tidak turun */
     }
     th {
       background: #2d89ef;
       color: white;
+    }
+
+    /* Responsive: font mengecil di HP */
+    @media (max-width: 600px) {
+      header h1 { font-size: 18px; }
+      header p { font-size: 12px; }
+      nav a { font-size: 12px; padding: 8px; }
+      table { font-size: 12px; }
     }
   </style>
 </head>
@@ -1796,4 +1812,5 @@
 
 </body>
 </html>
+
 
